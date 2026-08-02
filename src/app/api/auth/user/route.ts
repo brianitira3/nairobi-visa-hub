@@ -43,6 +43,7 @@ export async function POST(request: Request) {
           applicationDocuments: user.applicationDocuments,
           applicationStatus: user.applicationStatus,
           additionalDocumentsSkipped: user.additionalDocumentsSkipped,
+          additionalDocumentsComplete: user.additionalDocumentsComplete,
         } 
       },
       { status: 200 }

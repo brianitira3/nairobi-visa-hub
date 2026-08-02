@@ -49,6 +49,10 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  additionalDocumentsComplete: {
+    type: Boolean,
+    default: false,
+  },
   jobPreferences: {
     preferredCategory: String,
     preferredLocation: String,

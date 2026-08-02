@@ -169,6 +169,21 @@ export default function AdditionalDocumentsPage() {
       // Only redirect if this is first-time completion
       if (!existingPassport && !existingYellowFever && !existingDrivingLicense) {
         localStorage.setItem('additionalDocumentsComplete', 'true');
+        // Mark as complete in database
+        try {
+          const nationalId = localStorage.getItem('nationalId');
+          if (nationalId) {
+            await fetch('/api/auth/additional-documents-complete', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ nationalId }),
+            });
+          }
+        } catch (error) {
+          console.error('Error marking additional documents complete:', error);
+        }
         setTimeout(() => {
           window.location.href = '/dashboard';
         }, 1000);
