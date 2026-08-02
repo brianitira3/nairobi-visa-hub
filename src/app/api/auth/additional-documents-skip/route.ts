@@ -16,7 +16,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Find user by national ID
+    // Find user and mark additional documents as skipped
     const user = await User.findOne({ nationalId });
 
     if (!user) {
@@ -26,29 +26,16 @@ export async function POST(request: Request) {
       );
     }
 
+    // Mark additional documents as complete (skipped)
+    user.additionalDocumentsSkipped = true;
+    await user.save();
+
     return NextResponse.json(
-      { 
-        user: { 
-          phone: user.phone, 
-          nationalId: user.nationalId,
-          fullName: user.fullName,
-          location: user.location,
-          email: user.email,
-          nationalIdFront: user.nationalIdFront,
-          nationalIdBack: user.nationalIdBack,
-          passport: user.passport,
-          yellowFever: user.yellowFever,
-          drivingLicense: user.drivingLicense,
-          jobPreferences: user.jobPreferences,
-          applicationDocuments: user.applicationDocuments,
-          applicationStatus: user.applicationStatus,
-          additionalDocumentsSkipped: user.additionalDocumentsSkipped,
-        } 
-      },
+      { message: 'Additional documents marked as skipped' },
       { status: 200 }
     );
   } catch (error) {
-    console.error('User fetch error:', error);
+    console.error('Skip additional documents error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

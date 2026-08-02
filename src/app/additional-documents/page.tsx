@@ -180,9 +180,26 @@ export default function AdditionalDocumentsPage() {
     }
   };
 
-  const handleSkip = () => {
-    localStorage.setItem('additionalDocumentsComplete', 'true');
-    window.location.href = '/dashboard';
+  const handleSkip = async () => {
+    try {
+      const nationalId = localStorage.getItem('nationalId');
+      if (nationalId) {
+        await fetch('/api/auth/additional-documents-skip', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ nationalId }),
+        });
+      }
+      localStorage.setItem('additionalDocumentsComplete', 'true');
+      window.location.href = '/dashboard';
+    } catch (error) {
+      console.error('Error skipping additional documents:', error);
+      // Still redirect even if API fails
+      localStorage.setItem('additionalDocumentsComplete', 'true');
+      window.location.href = '/dashboard';
+    }
   };
 
   if (isMobile === false) {

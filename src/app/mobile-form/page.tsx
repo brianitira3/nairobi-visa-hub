@@ -88,11 +88,11 @@ export default function MobileForm() {
         } else if (!data.user.documentsComplete) {
           // Profile complete but ID documents incomplete
           window.location.href = '/documents';
-        } else if (!data.user.additionalDocumentsComplete) {
-          // ID complete but additional documents incomplete
+        } else if (!data.user.additionalDocumentsComplete && !data.user.additionalDocumentsSkipped) {
+          // ID complete but additional documents incomplete and not skipped
           window.location.href = '/additional-documents';
         } else {
-          // All complete, redirect to dashboard
+          // All complete or skipped, redirect to dashboard
           window.location.href = '/dashboard';
         }
       } else {

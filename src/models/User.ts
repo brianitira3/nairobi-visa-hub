@@ -45,6 +45,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  additionalDocumentsSkipped: {
+    type: Boolean,
+    default: false,
+  },
   jobPreferences: {
     preferredCategory: String,
     preferredLocation: String,
