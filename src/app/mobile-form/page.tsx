@@ -82,6 +82,9 @@ export default function MobileForm() {
       if (isLogin) {
         // Store national ID and redirect based on completion status
         localStorage.setItem('nationalId', data.user.nationalId);
+        console.log('User data from login:', data.user);
+        console.log('additionalDocumentsComplete:', data.user.additionalDocumentsComplete);
+        console.log('additionalDocumentsSkipped:', data.user.additionalDocumentsSkipped);
         if (!data.user.profileComplete) {
           // Redirect to profile completion
           window.location.href = '/profile';
@@ -90,9 +93,11 @@ export default function MobileForm() {
           window.location.href = '/documents';
         } else if (!data.user.additionalDocumentsComplete && !data.user.additionalDocumentsSkipped) {
           // ID complete but additional documents incomplete and not skipped
+          console.log('Redirecting to additional-documents');
           window.location.href = '/additional-documents';
         } else {
           // All complete or skipped, redirect to dashboard
+          console.log('Redirecting to dashboard');
           window.location.href = '/dashboard';
         }
       } else {
