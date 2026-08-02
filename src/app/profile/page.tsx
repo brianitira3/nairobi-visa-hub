@@ -15,6 +15,7 @@ export default function ProfilePage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [wasInitiallyEmpty, setWasInitiallyEmpty] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -25,6 +26,12 @@ export default function ProfilePage() {
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/pexels-gustavo-fring-3885496.webp';
+    img.onload = () => setImageLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -132,12 +139,20 @@ export default function ProfilePage() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat p-4 pb-24 relative z-10"
-      style={{ 
-        backgroundImage: "url('/pexels-gustavo-fring-3885496.jpg')",
-        backgroundColor: '#E8DCC5'
+      className="min-h-screen bg-cover bg-center bg-no-repeat p-4 pb-24 relative z-10 transition-all duration-500"
+      style={{
+        backgroundImage: imageLoaded
+          ? "url('/pexels-gustavo-fring-3885496.webp')"
+          : "url('/pexels-gustavo-fring-3885496-blur.jpg')",
+        filter: imageLoaded ? 'none' : 'blur(20px)',
+        backgroundColor: imageLoaded ? 'transparent' : '#E8DCC5'
       }}
     >
+      {!imageLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-amber-700"></div>
+        </div>
+      )}
       <LeatherBadge />
       <div className="w-full max-w-md rounded-2xl bg-white/95 p-8 shadow-lg backdrop-blur-sm border-2 border-amber-800 relative" style={{
         backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
