@@ -144,7 +144,7 @@ export default function MobileForm() {
 
   return (
     <div 
-      className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat p-4 transition-all duration-500"
+      className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat p-4 transition-all duration-500 relative"
       style={{
         backgroundImage: imageLoaded 
           ? "url('/pexels-gustavo-fring-3885496.webp')" 
@@ -153,6 +153,11 @@ export default function MobileForm() {
         backgroundColor: imageLoaded ? 'transparent' : '#F0E6D6'
       }}
     >
+      {!imageLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-amber-700"></div>
+        </div>
+      )}
       <div className="w-full max-w-md rounded-2xl bg-white/95 p-8 shadow-lg backdrop-blur-sm">
         <h1 className="mb-2 text-2xl font-semibold text-gray-900">
           {isLogin ? "Welcome Back" : "Nairobi Visa Hub"}
