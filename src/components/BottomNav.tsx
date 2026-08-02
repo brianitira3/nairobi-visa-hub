@@ -10,7 +10,7 @@ export default function BottomNav() {
   const navItems = [
     { icon: Home, label: "Home", path: "/dashboard" },
     { icon: Briefcase, label: "Jobs", path: "/jobs" },
-    { icon: FileText, label: "Apps", path: "/applications" },
+    { icon: FileText, label: "Applications", path: "/applications" },
     { icon: User, label: "Profile", path: "/profile" },
   ];
 
