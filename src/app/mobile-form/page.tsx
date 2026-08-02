@@ -113,7 +113,8 @@ export default function MobileForm() {
     const checkMobile = () => {
       const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
       const isMobileDevice = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
-      setIsMobile(isMobileDevice);
+      const isMobileWidth = window.innerWidth <= 768;
+      setIsMobile(isMobileDevice || isMobileWidth);
     };
 
     checkMobile();

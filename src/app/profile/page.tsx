@@ -18,14 +18,16 @@ export default function ProfilePage() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      const mobile = window.innerWidth <= 430;
-      setIsMobile(mobile);
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+      const isMobileDevice = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+      const isMobileWidth = window.innerWidth <= 768;
+      setIsMobile(isMobileDevice || isMobileWidth);
     };
 
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
