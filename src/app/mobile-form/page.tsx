@@ -10,6 +10,7 @@ export default function MobileForm() {
   const [isLogin, setIsLogin] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -109,14 +110,21 @@ export default function MobileForm() {
   };
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      const mobile = window.innerWidth <= 430;
-      setIsMobile(mobile);
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+      const isMobileDevice = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+      setIsMobile(isMobileDevice);
     };
 
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/pexels-gustavo-fring-3885496.webp';
+    img.onload = () => setImageLoaded(true);
   }, []);
 
   if (isMobile === null) {
@@ -136,8 +144,14 @@ export default function MobileForm() {
 
   return (
     <div 
-      className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat p-4"
-      style={{ backgroundImage: "url('/pexels-gustavo-fring-3885496.jpg')" }}
+      className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat p-4 transition-all duration-500"
+      style={{
+        backgroundImage: imageLoaded 
+          ? "url('/pexels-gustavo-fring-3885496.webp')" 
+          : "url('/pexels-gustavo-fring-3885496-blur.jpg')",
+        filter: imageLoaded ? 'none' : 'blur(20px)',
+        backgroundColor: imageLoaded ? 'transparent' : '#F0E6D6'
+      }}
     >
       <div className="w-full max-w-md rounded-2xl bg-white/95 p-8 shadow-lg backdrop-blur-sm">
         <h1 className="mb-2 text-2xl font-semibold text-gray-900">
