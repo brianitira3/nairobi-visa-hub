@@ -16,10 +16,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nairobi Visa Hub",
   description: "Nairobi Visa Hub - Get visa assistance for international work opportunities",
+  manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
     apple: "/icon-192x192.png",
   },
+  themeColor: "#8B4513",
 };
 
 export default function RootLayout({
