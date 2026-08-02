@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     // Find and update user
     const user = await User.findOneAndUpdate(
       { nationalId },
-      { nationalIdFront, nationalIdBack },
+      { nationalIdFront, nationalIdBack, documentsComplete: true },
       { new: true }
     );
 

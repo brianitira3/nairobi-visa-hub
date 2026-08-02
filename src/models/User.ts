@@ -25,6 +25,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  profileComplete: {
+    type: Boolean,
+    default: false,
+  },
+  documentsComplete: {
+    type: Boolean,
+    default: false,
+  },
   nationalIdFront: {
     type: String,
     required: false,

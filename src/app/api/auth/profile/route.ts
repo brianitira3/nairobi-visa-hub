@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     // Find and update user
     const user = await User.findOneAndUpdate(
       { nationalId },
-      { fullName, location, email },
+      { fullName, location, email, profileComplete: true },
       { new: true }
     );
 
