@@ -37,7 +37,8 @@ export async function POST(request: Request) {
           email: user.email,
           profileComplete: !!(user.fullName && user.location && user.email),
           documentsComplete: !!(user.nationalIdFront && user.nationalIdBack),
-          additionalDocumentsComplete: !!(user.passport && user.yellowFever)
+          additionalDocumentsComplete: !!(user.passport && user.yellowFever),
+          additionalDocumentsSkipped: user.additionalDocumentsSkipped
         } 
       },
       { status: 200 }
