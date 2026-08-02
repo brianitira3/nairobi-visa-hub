@@ -140,9 +140,14 @@ export default function MobileForm() {
       style={{ backgroundImage: "url('/pexels-gustavo-fring-3885496.jpg')" }}
     >
       <div className="w-full max-w-md rounded-2xl bg-white/95 p-8 shadow-lg backdrop-blur-sm">
-        <h1 className="mb-6 text-2xl font-semibold text-gray-900">
-          {isLogin ? "Welcome Back" : "Work Abroad Portal"}
+        <h1 className="mb-2 text-2xl font-semibold text-gray-900">
+          {isLogin ? "Welcome Back" : "Nairobi Visa Hub"}
         </h1>
+        {!isLogin && (
+          <p className="mb-6 text-sm text-gray-600">
+            Start Your Journey Abroad Today
+          </p>
+        )}
 
         {error && (
           <div className="rounded-lg bg-red-50 p-3 text-sm text-red-800">

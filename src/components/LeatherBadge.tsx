@@ -118,7 +118,7 @@ export default function LeatherBadge() {
           fill="#0a0503"
           letterSpacing="3"
         >
-          WORK
+          NAIROBI
         </text>
         <text
           x="175"
@@ -130,7 +130,7 @@ export default function LeatherBadge() {
           fill="#0a0503"
           letterSpacing="3"
         >
-          ABROAD
+          VISA HUB
         </text>
         
         {/* Ribbon banner */}
@@ -168,7 +168,7 @@ export default function LeatherBadge() {
           fill="#0a0503"
           letterSpacing="2"
         >
-          INTERNATIONAL JOBS
+          GO ABROAD
         </text>
         
         {/* Decorative stitch points */}

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "International Jobs",
-  description: "Work Abroad Portal - Find international job opportunities",
+  title: "Nairobi Visa Hub",
+  description: "Nairobi Visa Hub - Get visa assistance for international work opportunities",
 };
 
 export default function RootLayout({

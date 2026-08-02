@@ -64,7 +64,7 @@ export default function DashboardPage() {
         <div className="flex items-center justify-center px-4 py-3 relative">
           <div className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-amber-800"></div>
           <div className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-amber-800"></div>
-          <h1 className="text-lg font-serif font-bold text-amber-950 tracking-widest uppercase">Work Abroad Portal</h1>
+          <h1 className="text-lg font-serif font-bold text-amber-950 tracking-widest uppercase">Nairobi Visa Hub</h1>
         </div>
       </div>
 
