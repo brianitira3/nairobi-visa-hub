@@ -5,7 +5,7 @@ import BottomNav from "@/components/BottomNav";
 import { compressImage, isImageFile } from "@/utils/imageCompression";
 
 export default function AdditionalDocumentsPage() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
   const [passport, setPassport] = useState<string | null>(null);
   const [yellowFever, setYellowFever] = useState<string | null>(null);
   const [drivingLicense, setDrivingLicense] = useState<string | null>(null);
@@ -184,10 +184,6 @@ export default function AdditionalDocumentsPage() {
     localStorage.setItem('additionalDocumentsComplete', 'true');
     window.location.href = '/dashboard';
   };
-
-  if (isMobile === null) {
-    return null;
-  }
 
   if (isMobile === false) {
     return (

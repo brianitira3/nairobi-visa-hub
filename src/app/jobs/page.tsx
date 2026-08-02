@@ -8,7 +8,7 @@ import LeatherBadge from "@/components/LeatherBadge";
 
 export default function JobsPage() {
   const { user, loading: userLoading, refreshUser, updateUser } = useUser();
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
   const [jobs, setJobs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -190,10 +190,6 @@ export default function JobsPage() {
       setIsSaving(false);
     }
   };
-
-  if (isMobile === null) {
-    return null;
-  }
 
   if (isMobile === false) {
     return (

@@ -7,7 +7,7 @@ import LeatherBadge from "@/components/LeatherBadge";
 
 export default function ProfilePage() {
   const { user, loading, refreshUser } = useUser();
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
   const [fullName, setFullName] = useState("");
   const [location, setLocation] = useState("");
   const [email, setEmail] = useState("");
@@ -110,10 +110,6 @@ export default function ProfilePage() {
       setIsSubmitting(false);
     }
   };
-
-  if (isMobile === null) {
-    return null;
-  }
 
   if (isMobile === false) {
     return (

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function MobileForm() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
   const [phone, setPhone] = useState("");
   const [nationalId, setNationalId] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -126,10 +126,6 @@ export default function MobileForm() {
     img.src = '/pexels-gustavo-fring-3885496.webp';
     img.onload = () => setImageLoaded(true);
   }, []);
-
-  if (isMobile === null) {
-    return null;
-  }
 
   if (isMobile === false) {
     return (

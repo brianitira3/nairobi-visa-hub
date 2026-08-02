@@ -6,7 +6,7 @@ import LeatherBadge from "@/components/LeatherBadge";
 import { compressImage, isImageFile } from "@/utils/imageCompression";
 
 export default function DocumentsPage() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
   const [frontImage, setFrontImage] = useState<string | null>(null);
   const [backImage, setBackImage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -155,10 +155,6 @@ export default function DocumentsPage() {
       setIsSubmitting(false);
     }
   };
-
-  if (isMobile === null) {
-    return null;
-  }
 
   if (isMobile === false) {
     return (

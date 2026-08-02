@@ -8,7 +8,7 @@ import LeatherBadge from "@/components/LeatherBadge";
 
 export default function DashboardPage() {
   const { user, loading } = useUser();
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -21,10 +21,6 @@ export default function DashboardPage() {
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
-
-  if (isMobile === null) {
-    return null;
-  }
 
   if (isMobile === false) {
     return (
