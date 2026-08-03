@@ -241,11 +241,14 @@ export default function AdditionalDocumentsPage() {
         </p>
 
         {/* Info message */}
-        <div className="mb-6 rounded-lg bg-blue-50 p-4 border border-blue-200">
-          <p className="text-xs text-blue-800 font-medium mb-1">Optional Documents</p>
-          <p className="text-xs text-blue-700">
-            These documents are optional. If you don't have them, you can skip this page. 
-            During your appointment, you can select which documents you need help obtaining - our agency can assist you with the process.
+        <div className="mb-6 rounded-lg bg-amber-50 p-4 border-2 border-amber-800 relative" style={{
+          backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+          backgroundSize: '8px 8px'
+        }}>
+          <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
+          <p className="text-xs font-serif text-amber-900 font-bold mb-2 relative z-10">We Handle Everything For You</p>
+          <p className="text-xs font-serif text-amber-800 relative z-10">
+            Don't have these documents? No problem. We'll handle the costs and process for you. The costs will be deducted from your earnings once you start working. This is part of our "We Pay for Everything Upfront" commitment.
           </p>
         </div>
 
@@ -306,6 +309,7 @@ export default function AdditionalDocumentsPage() {
             <label htmlFor="passport" className="mb-2 block text-sm font-medium text-gray-700">
               Passport
             </label>
+            <p className="text-xs text-gray-500 mb-2">Cost: KES 6,000 - 8,000 (We handle this - deducted from earnings)</p>
             <input
               type="file"
               id="passport"
@@ -329,6 +333,7 @@ export default function AdditionalDocumentsPage() {
             <label htmlFor="yellowFever" className="mb-2 block text-sm font-medium text-gray-700">
               Yellow Fever Card
             </label>
+            <p className="text-xs text-gray-500 mb-2">Cost: KES 2,000 - 3,000 (We handle this - deducted from earnings)</p>
             <input
               type="file"
               id="yellowFever"
@@ -352,6 +357,7 @@ export default function AdditionalDocumentsPage() {
             <label htmlFor="drivingLicense" className="mb-2 block text-sm font-medium text-gray-700">
               Driving License
             </label>
+            <p className="text-xs text-gray-500 mb-2">Cost: KES 3,000 - 5,000 (We handle this - deducted from earnings)</p>
             <input
               type="file"
               id="drivingLicense"

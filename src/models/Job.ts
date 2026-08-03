@@ -12,7 +12,7 @@ const JobSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Construction', 'Hospitality', 'Healthcare', 'Agriculture', 'Manufacturing', 'Other'],
+    enum: ['Construction', 'Hospitality', 'Healthcare', 'Agriculture', 'Manufacturing', 'Other', 'IT', 'Engineering', 'Finance', 'Education', 'Healthcare Professional', 'Management'],
   },
   location: {
     type: String,

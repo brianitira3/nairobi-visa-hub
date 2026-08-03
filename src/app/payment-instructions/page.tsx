@@ -116,14 +116,14 @@ export default function PaymentInstructionsPage() {
         }}>
           <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
           <div className="relative z-10">
-            <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">Contact Brian Mariita</h2>
+            <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">Contact Dr. Richard Omondi</h2>
             
             <div className="flex items-center gap-3 mb-3">
               <div className="w-12 h-12 rounded-full bg-amber-800 flex items-center justify-center">
                 <Phone size={24} className="text-white" />
               </div>
               <div>
-                <div className="text-lg font-serif font-bold text-amber-900">Brian Mariita</div>
+                <div className="text-lg font-serif font-bold text-amber-900">Dr. Richard Omondi</div>
                 <div className="text-sm font-serif text-amber-800">Chief Officer & Official Broker</div>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function PaymentInstructionsPage() {
                 <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white text-xs font-bold">1</span>
                 </div>
-                <p className="text-xs font-serif text-amber-900">Call Brian Mariita at the number above</p>
+                <p className="text-xs font-serif text-amber-900">Call Dr. Richard Omondi at the number above</p>
               </div>
               
               <div className="flex items-start gap-2">
@@ -185,7 +185,7 @@ export default function PaymentInstructionsPage() {
           <div className="flex items-start gap-2 relative z-10">
             <AlertCircle size={16} className="text-amber-800 mt-0.5 flex-shrink-0" />
             <p className="text-xs font-serif text-amber-900 font-medium">
-              Brian Mariita is our Chief Officer and Official Broker. He will verify your payment and notify our agency to approve your appointment.
+              Dr. Richard Omondi is our Chief Officer and Official Broker. He will verify your payment and notify our agency to approve your appointment.
             </p>
           </div>
         </div>

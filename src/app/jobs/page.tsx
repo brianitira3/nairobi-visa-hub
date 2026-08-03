@@ -29,9 +29,9 @@ export default function JobsPage() {
   const [savedPreferences, setSavedPreferences] = useState<any>(null);
   const [isEditMode, setIsEditMode] = useState(false);
 
-  const categories = ['all', 'Construction', 'Hospitality', 'Healthcare', 'Agriculture', 'Manufacturing', 'Other'];
-  const locations = ['UAE', 'Saudi Arabia', 'Qatar', 'Kuwait', 'Bahrain', 'Oman'];
-  const salaryRanges = ['KES 30,000 - 40,000', 'KES 40,000 - 50,000', 'KES 50,000 - 60,000', 'KES 60,000 - 70,000', 'KES 70,000+'];
+  const categories = ['all', 'Construction', 'Hospitality', 'Healthcare', 'Agriculture', 'Manufacturing', 'Other', 'IT', 'Engineering', 'Finance', 'Education', 'Healthcare Professional', 'Management'];
+  const locations = ['UAE', 'Saudi Arabia', 'Qatar', 'Kuwait', 'Bahrain', 'Oman', 'USA', 'Canada', 'Germany', 'UK', 'France', 'Netherlands', 'Australia'];
+  const salaryRanges = ['KES 30,000 - 40,000', 'KES 40,000 - 50,000', 'KES 50,000 - 60,000', 'KES 60,000 - 70,000', 'KES 70,000 - 100,000', 'KES 100,000 - 150,000', 'KES 150,000+'];
   const experienceLevels = ['No experience', '1-2 years', '3-5 years', '5+ years'];
   const availabilityOptions = ['Immediate', 'Within 1 month', 'Within 3 months', 'Within 6 months'];
 

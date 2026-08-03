@@ -72,7 +72,7 @@ export default function PaymentPendingPage() {
             </div>
             <div>
               <h2 className="text-sm font-serif font-bold text-amber-900">Payment Verification</h2>
-              <p className="text-xs font-serif text-amber-800">Your payment is being verified by Brian Mariita</p>
+              <p className="text-xs font-serif text-amber-800">Your payment is being verified by Dr. Richard Omondi</p>
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function PaymentPendingPage() {
                 <Phone size={24} className="text-white" />
               </div>
               <div>
-                <div className="text-lg font-serif font-bold text-amber-900">Brian Mariita</div>
+                <div className="text-lg font-serif font-bold text-amber-900">Dr. Richard Omondi</div>
                 <div className="text-sm font-serif text-amber-800">Chief Officer & Official Broker</div>
               </div>
             </div>

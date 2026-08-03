@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function MobileForm() {
+  const searchParams = useSearchParams();
   const [isMobile, setIsMobile] = useState<boolean>(true);
   const [phone, setPhone] = useState("");
   const [nationalId, setNationalId] = useState("");
@@ -121,6 +123,12 @@ export default function MobileForm() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (searchParams.get('login') === 'true') {
+      setIsLogin(true);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const img = new Image();

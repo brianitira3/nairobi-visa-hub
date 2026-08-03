@@ -325,7 +325,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Valid Kenyan Passport
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Required for all international travel. Must have at least 6 months validity.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Required for all international travel. Must have at least 6 months validity. Cost: KES 6,000-8,000 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -369,7 +369,7 @@ export default function ApplicationsPage() {
                 {documents.passportStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will assist you in obtaining your passport during your appointment. We'll guide you through the application process at Nyayo House.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 6,000 - 8,000. We'll obtain your passport and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -381,7 +381,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Birth Certificate
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Original or certified copy required.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Original or certified copy required. Cost: KES 200-500 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -425,7 +425,7 @@ export default function ApplicationsPage() {
                 {documents.birthCertificateStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will help you obtain your birth certificate from the Civil Registration Department during your appointment.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 200 - 500. We'll obtain your birth certificate and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -481,7 +481,7 @@ export default function ApplicationsPage() {
                 {documents.marriageCertificateStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> If you're married, our agency will assist you in obtaining your marriage certificate from the Registrar of Marriages during your appointment.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 500 - 1,000. If married, we'll obtain your marriage certificate and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -507,7 +507,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Certificate of Good Conduct
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Police clearance certificate. Valid for 6-12 months. Cost: KSh 1,050.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Police clearance certificate. Valid for 6-12 months. Cost: KES 1,050 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -551,7 +551,7 @@ export default function ApplicationsPage() {
                 {documents.certificateOfGoodConductStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will assist you in obtaining your Certificate of Good Conduct from CID Headquarters during your appointment. We'll guide you through the application process.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 1,050. We'll obtain your Certificate of Good Conduct and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -563,7 +563,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     KRA Tax Compliance Certificate
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Required for employment. Valid for 12 months. Free via iTax portal.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Required for employment. Valid for 12 months. Cost: Free via iTax (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -607,7 +607,7 @@ export default function ApplicationsPage() {
                 {documents.kraTaxComplianceStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will help you obtain your KRA Tax Compliance Certificate via the iTax portal during your appointment.
+                      <span className="font-bold">We handle everything!</span> Cost: Free via iTax. We'll help you obtain your KRA Tax Compliance Certificate during your appointment.
                     </p>
                   </div>
                 )}
@@ -619,7 +619,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Apostille (If Required)
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Document authentication for Hague Convention countries (UK, US, Australia, Canada, Germany). Cost: KSh 1,500 per document.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Document authentication for Hague Convention countries (UK, US, Australia, Canada, Germany). Cost: KES 1,500 per document (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -663,7 +663,7 @@ export default function ApplicationsPage() {
                 {documents.apostilleStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will assist you in obtaining apostilles from the Attorney General's Chambers during your appointment if required for your destination country.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 1,500 per document. We'll obtain apostilles if required and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -689,7 +689,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Yellow Fever Vaccination Certificate
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Required for many countries. Cost: KSh 3,000-5,000.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Required for many countries. Cost: KES 3,000-5,000 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -733,7 +733,7 @@ export default function ApplicationsPage() {
                 {documents.yellowFeverCertificateStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will help you get your yellow fever vaccination from approved clinics (KEMRI, KNH, Port Health) during your appointment.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 3,000 - 5,000. We'll get your yellow fever vaccination and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -745,7 +745,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Immigration Medical Examination
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Required by most countries. Cost: KSh 15,000-45,000.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Required by most countries. Cost: KES 15,000-45,000 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -789,7 +789,7 @@ export default function ApplicationsPage() {
                 {documents.medicalExamCertificateStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will connect you with IOM Nairobi or approved panel physicians for your immigration medical exam during your appointment.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 15,000 - 45,000. We'll connect you with IOM Nairobi for your medical exam and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -801,7 +801,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     TB Test Certificate
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Required for UK, Australia, NZ, Canada. Cost: KSh 5,000-10,000.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Required for UK, Australia, NZ, Canada. Cost: KES 5,000-10,000 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -845,7 +845,7 @@ export default function ApplicationsPage() {
                 {documents.tbTestCertificateStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will help you get your TB test from approved clinics (IOM, Aga Khan) during your appointment if required for your destination.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 5,000 - 10,000. We'll help you get your TB test if required and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -857,7 +857,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     HIV Test Certificate
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Required for some Gulf countries and Russia. Cost: KSh 500-2,000.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Required for some Gulf countries and Russia. Cost: KES 500-2,000 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -901,7 +901,7 @@ export default function ApplicationsPage() {
                 {documents.hivTestCertificateStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will help you get your HIV test from VCT centres or private labs during your appointment if required for your destination.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 500 - 2,000. We'll help you get your HIV test if required and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -927,7 +927,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Employment Contract
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Valid contract from foreign employer with LD21 forms.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Valid contract from foreign employer with LD21 forms. Cost: KES 500-1,000 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -971,7 +971,7 @@ export default function ApplicationsPage() {
                 {documents.employmentContractStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will help you obtain a valid employment contract and LD21 forms from the Ministry of Labour during your appointment.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 500 - 1,000. We'll help you obtain employment contract and LD21 forms and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -983,7 +983,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Character Reference (Optional)
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Reference letter from local chief, community leader, or previous employer (if available).</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Reference letter from local chief, community leader, or previous employer (if available). Cost: KES 200-500 (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -1027,7 +1027,7 @@ export default function ApplicationsPage() {
                 {documents.employerIntroductionLetterStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Most of our clients don't have this. Our agency can help you get a character reference from your local chief or community leader during your appointment if needed.
+                      <span className="font-bold">We handle everything!</span> Cost: KES 200 - 500. We'll help you get a character reference and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
@@ -1039,7 +1039,7 @@ export default function ApplicationsPage() {
                   <label className="block text-sm font-serif font-bold text-amber-900 mb-1">
                     Invitation Letter
                   </label>
-                  <p className="text-xs font-serif text-amber-800 mb-2">Official invitation from foreign employer on letterhead.</p>
+                  <p className="text-xs font-serif text-amber-800 mb-2">Official invitation from foreign employer on letterhead. Cost: Varies by employer (we handle if needed).</p>
                   
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -1083,7 +1083,7 @@ export default function ApplicationsPage() {
                 {documents.invitationLetterStatus === 'dont_have' && (
                   <div className="ml-6 mt-2 bg-amber-100/50 p-2 rounded border border-amber-600">
                     <p className="text-xs font-serif text-amber-900">
-                      <span className="font-bold">Don't worry!</span> Our agency will help you obtain an official invitation letter from your foreign employer during your appointment.
+                      <span className="font-bold">We handle everything!</span> Cost: Varies by employer. We'll help you obtain an official invitation letter and deduct from your earnings once you start working.
                     </p>
                   </div>
                 )}
