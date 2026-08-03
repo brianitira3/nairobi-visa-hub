@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function MobileForm() {
+function MobileFormContent() {
   const searchParams = useSearchParams();
   const [isMobile, setIsMobile] = useState<boolean>(true);
   const [phone, setPhone] = useState("");
@@ -242,5 +242,13 @@ export default function MobileForm() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function MobileForm() {
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-gray-50"><div className="text-gray-600">Loading...</div></div>}>
+      <MobileFormContent />
+    </Suspense>
   );
 }
