@@ -145,31 +145,31 @@ export default function LandingPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-8 space-y-4"
+          className="mt-8 grid grid-cols-2 gap-3"
         >
-          <div className="text-center">
-            <Home className="w-10 h-10 text-amber-400 mx-auto mb-1" />
-            <h3 className="text-lg font-serif font-bold text-white mb-1">Household Jobs</h3>
-            <p className="text-2xl font-serif font-bold text-amber-400 mb-1">KES 60,000-120,000/month</p>
-            <p className="text-xs font-serif text-gray-200">Housekeeping, childcare, cooking</p>
+          <div className="text-center bg-amber-900/30 p-3 rounded-lg">
+            <Home className="w-8 h-8 text-amber-400 mx-auto mb-1" />
+            <h3 className="text-sm font-serif font-bold text-white mb-1">Household</h3>
+            <p className="text-lg font-serif font-bold text-amber-400 mb-0.5">KES 60-120K</p>
+            <p className="text-xs font-serif text-gray-200">Housekeeping, childcare</p>
           </div>
-          <div className="text-center">
-            <Building2 className="w-10 h-10 text-amber-400 mx-auto mb-1" />
-            <h3 className="text-lg font-serif font-bold text-white mb-1">Construction Jobs</h3>
-            <p className="text-2xl font-serif font-bold text-amber-400 mb-1">KES 75,000-150,000/month</p>
-            <p className="text-xs font-serif text-gray-200">Skilled and general labor</p>
+          <div className="text-center bg-amber-900/30 p-3 rounded-lg">
+            <Building2 className="w-8 h-8 text-amber-400 mx-auto mb-1" />
+            <h3 className="text-sm font-serif font-bold text-white mb-1">Construction</h3>
+            <p className="text-lg font-serif font-bold text-amber-400 mb-0.5">KES 75-150K</p>
+            <p className="text-xs font-serif text-gray-200">Skilled labor</p>
           </div>
-          <div className="text-center">
-            <Heart className="w-10 h-10 text-amber-400 mx-auto mb-1" />
-            <h3 className="text-lg font-serif font-bold text-white mb-1">Healthcare Jobs</h3>
-            <p className="text-2xl font-serif font-bold text-amber-400 mb-1">KES 100,000-200,000/month</p>
-            <p className="text-xs font-serif text-gray-200">Nurses, caregivers, medical staff</p>
+          <div className="text-center bg-amber-900/30 p-3 rounded-lg">
+            <Heart className="w-8 h-8 text-amber-400 mx-auto mb-1" />
+            <h3 className="text-sm font-serif font-bold text-white mb-1">Healthcare</h3>
+            <p className="text-lg font-serif font-bold text-amber-400 mb-0.5">KES 100-200K</p>
+            <p className="text-xs font-serif text-gray-200">Nurses, caregivers</p>
           </div>
-          <div className="text-center">
-            <Briefcase className="w-10 h-10 text-amber-400 mx-auto mb-1" />
-            <h3 className="text-lg font-serif font-bold text-white mb-1">IT & Engineering</h3>
-            <p className="text-2xl font-serif font-bold text-amber-400 mb-1">KES 150,000-300,000/month</p>
-            <p className="text-xs font-serif text-gray-200">Software, technical, engineering roles</p>
+          <div className="text-center bg-amber-900/30 p-3 rounded-lg">
+            <Briefcase className="w-8 h-8 text-amber-400 mx-auto mb-1" />
+            <h3 className="text-sm font-serif font-bold text-white mb-1">IT & Engineering</h3>
+            <p className="text-lg font-serif font-bold text-amber-400 mb-0.5">KES 150-300K</p>
+            <p className="text-xs font-serif text-gray-200">Technical roles</p>
           </div>
         </motion.div>
 
