@@ -109,7 +109,7 @@ export default function PaymentInstructionsPage() {
           </div>
         </div>
 
-        {/* Brian's Contact Card */}
+        {/* Richard's Contact Card */}
         <div className="bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative mb-4" style={{
           backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
           backgroundSize: '8px 8px'
