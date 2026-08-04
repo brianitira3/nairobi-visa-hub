@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
   try {
     await connectDB();
 
-    const { nationalId, documents } = await request.json();
+    const { nationalId } = await request.json();
 
     if (!nationalId) {
       return NextResponse.json({ error: 'National ID is required' }, { status: 400 });
@@ -19,37 +19,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'User not found' }, { status: 404 });
     }
 
-    // Update application documents - convert status to boolean
-    user.applicationDocuments = {
-      hasPassport: documents.passportStatus === 'have',
-      passportUpload: documents.passportUpload,
-      hasBirthCertificate: documents.birthCertificateStatus === 'have',
-      birthCertificateUpload: documents.birthCertificateUpload,
-      hasMarriageCertificate: documents.marriageCertificateStatus === 'have',
-      marriageCertificateUpload: documents.marriageCertificateUpload,
-      hasCertificateOfGoodConduct: documents.certificateOfGoodConductStatus === 'have',
-      certificateOfGoodConductUpload: documents.certificateOfGoodConductUpload,
-      hasKraTaxCompliance: documents.kraTaxComplianceStatus === 'have',
-      kraTaxComplianceUpload: documents.kraTaxComplianceUpload,
-      hasApostille: documents.apostilleStatus === 'have',
-      apostilleUpload: documents.apostilleUpload,
-      hasYellowFeverCertificate: documents.yellowFeverCertificateStatus === 'have',
-      yellowFeverCertificateUpload: documents.yellowFeverCertificateUpload,
-      hasMedicalExamCertificate: documents.medicalExamCertificateStatus === 'have',
-      medicalExamCertificateUpload: documents.medicalExamCertificateUpload,
-      hasTbTestCertificate: documents.tbTestCertificateStatus === 'have',
-      tbTestCertificateUpload: documents.tbTestCertificateUpload,
-      hasHivTestCertificate: documents.hivTestCertificateStatus === 'have',
-      hivTestCertificateUpload: documents.hivTestCertificateUpload,
-      hasEmploymentContract: documents.employmentContractStatus === 'have',
-      employmentContractUpload: documents.employmentContractUpload,
-      hasEmployerIntroductionLetter: documents.employerIntroductionLetterStatus === 'have',
-      employerIntroductionLetterUpload: documents.employerIntroductionLetterUpload,
-      hasInvitationLetter: documents.invitationLetterStatus === 'have',
-      invitationLetterUpload: documents.invitationLetterUpload,
-    };
-
-    // Update application status
+    // Update application status - documents will be handled at appointment
     user.applicationStatus = {
       ...user.applicationStatus,
       submitted: true,
@@ -60,13 +30,13 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ 
       success: true, 
-      message: 'Application documents saved successfully' 
+      message: 'Application submitted successfully' 
     });
 
   } catch (error) {
-    console.error('Error saving application documents:', error);
+    console.error('Error saving application:', error);
     return NextResponse.json({ 
-      error: 'Failed to save application documents' 
+      error: 'Failed to save application' 
     }, { status: 500 });
   }
 }
