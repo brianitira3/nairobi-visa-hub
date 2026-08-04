@@ -126,7 +126,11 @@ export default function DashboardPage() {
             </div>
             <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
               <span className="text-sm font-serif text-amber-900 font-medium">Appointment Booked:</span>
-              <span className="text-sm font-serif font-bold text-amber-900">{user?.applicationStatus?.appointmentBooked ? '✓ Yes' : 'No'}</span>
+              <span className="text-sm font-serif font-bold text-amber-900">
+                {user?.applicationStatus?.appointmentBooked 
+                  ? (user?.applicationStatus?.paymentStatus === 'completed' ? '✓ Yes' : 'Reserved (Pending Payment)') 
+                  : 'No'}
+              </span>
             </div>
             {user?.applicationStatus?.appointmentDate && (
               <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
@@ -146,6 +150,18 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
+
+        {/* Payment Warning Banner */}
+        {user?.applicationStatus?.appointmentBooked && user?.applicationStatus?.paymentStatus !== 'completed' && (
+          <div className="mt-4 bg-red-50 p-4 rounded-lg border-2 border-red-800 relative" style={{
+            backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+            backgroundSize: '8px 8px'
+          }}>
+            <div className="absolute inset-0 border-2 border-dashed border-red-700 rounded-lg pointer-events-none"></div>
+            <p className="text-sm font-serif text-red-900 font-bold relative z-10">⚠️ Payment Required</p>
+            <p className="text-xs font-serif text-red-800 relative z-10">Your appointment is not confirmed until payment is verified. Please complete your payment to secure your appointment.</p>
+          </div>
+        )}
       </div>
       
       <BottomNav />
