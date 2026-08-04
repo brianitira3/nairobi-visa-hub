@@ -129,9 +129,8 @@ export default function PaymentInstructionsPage() {
             </div>
 
             <div className="bg-amber-100 p-3 rounded border border-amber-600">
-              <div className="text-xs font-serif text-amber-700 mb-1">Call these numbers (DO NOT send money directly):</div>
-              <div className="text-xl font-serif font-bold text-amber-900 mb-1">0785664256</div>
-              <div className="text-xl font-serif font-bold text-amber-900">0106821753</div>
+              <div className="text-xs font-serif text-amber-700 mb-1">Call this number (DO NOT send money directly):</div>
+              <div className="text-xl font-serif font-bold text-amber-900">0785664256</div>
             </div>
           </div>
         </div>
