@@ -16,6 +16,32 @@ export default function ApplicationsPage() {
   const [showRedirectMessage, setShowRedirectMessage] = useState(false);
 
   useEffect(() => {
+    // Check if user has saved job preferences
+    if (user?.jobPreferences) {
+      const hasMeaningfulData = 
+        user.jobPreferences.preferredCategory ||
+        user.jobPreferences.preferredLocation ||
+        user.jobPreferences.expectedSalary ||
+        user.jobPreferences.experience ||
+        user.jobPreferences.skills?.length ||
+        user.jobPreferences.availability ||
+        user.jobPreferences.notes;
+      
+      if (!hasMeaningfulData) {
+        setShowRedirectMessage(true);
+        setTimeout(() => {
+          router.push('/jobs');
+        }, 3000);
+        return;
+      }
+    } else {
+      setShowRedirectMessage(true);
+      setTimeout(() => {
+        router.push('/jobs');
+      }, 3000);
+      return;
+    }
+
     // Redirect if already submitted
     if (user?.applicationStatus?.submitted) {
       router.push('/appointment-booking');
