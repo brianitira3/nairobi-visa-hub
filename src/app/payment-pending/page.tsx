@@ -112,7 +112,7 @@ export default function PaymentPendingPage() {
           </div>
         </div>
 
-        {/* Brian's Contact */}
+        {/* Richard's Contact */}
         <div className="bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative mb-4" style={{
           backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
           backgroundSize: '8px 8px'
@@ -147,7 +147,7 @@ export default function PaymentPendingPage() {
           <div className="flex items-start gap-2 relative z-10">
             <CheckCircle size={16} className="text-amber-800 mt-0.5 flex-shrink-0" />
             <p className="text-xs font-serif text-amber-900 font-medium">
-              Once Brian confirms your payment, he will notify our agency and your appointment will be approved. You can check back here for updates.
+              Once Richard confirms your payment, he will notify our agency and your appointment will be approved. You can check back here for updates.
             </p>
           </div>
         </div>
