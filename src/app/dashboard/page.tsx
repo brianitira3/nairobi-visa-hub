@@ -2,14 +2,12 @@
 
 import { useEffect, useState } from "react";
 import BottomNav from "@/components/BottomNav";
-import { X } from "lucide-react";
 import { useUser } from "@/context/UserContext";
 import LeatherBadge from "@/components/LeatherBadge";
 
 export default function DashboardPage() {
   const { user, loading } = useUser();
   const [isMobile, setIsMobile] = useState<boolean>(true);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -111,49 +109,7 @@ export default function DashboardPage() {
           )}
         </div>
 
-        {/* National ID Documents */}
-        <div className="mb-8 bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative" style={{
-          backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
-          backgroundSize: '8px 8px'
-        }}>
-          <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
-          <h3 className="mb-3 text-sm font-serif font-bold text-amber-900 uppercase tracking-widest relative">
-            <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-amber-800"></span>
-            National ID Documents
-          </h3>
-          <div className="space-y-2 relative z-10">
-            <div
-              className="flex justify-between items-center py-2 border-b border-dashed border-amber-700/50 cursor-pointer hover:bg-amber-100/50 rounded px-2 transition-colors"
-              onClick={() => user?.nationalIdFront && setSelectedImage(user.nationalIdFront)}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-serif text-amber-900 font-medium">ID Front:</span>
-                {user?.nationalIdFront && (
-                  <span className="text-xs font-serif text-amber-800 font-bold">✓ UPLOADED</span>
-                )}
-              </div>
-              {user?.nationalIdFront && (
-                <span className="text-xs font-serif text-amber-900 font-medium">TAP TO VIEW</span>
-              )}
-            </div>
-            <div
-              className="flex justify-between items-center py-2 border-b border-dashed border-amber-700/50 cursor-pointer hover:bg-amber-100/50 rounded px-2 transition-colors"
-              onClick={() => user?.nationalIdBack && setSelectedImage(user.nationalIdBack)}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-serif text-amber-900 font-medium">ID Back:</span>
-                {user?.nationalIdBack && (
-                  <span className="text-xs font-serif text-amber-800 font-bold">✓ UPLOADED</span>
-                )}
-              </div>
-              {user?.nationalIdBack && (
-                <span className="text-xs font-serif text-amber-900 font-medium">TAP TO VIEW</span>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Documents */}
+        {/* Application Status */}
         <div className="bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative" style={{
           backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
           backgroundSize: '8px 8px'
@@ -161,74 +117,36 @@ export default function DashboardPage() {
           <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
           <h3 className="mb-3 text-sm font-serif font-bold text-amber-900 uppercase tracking-widest relative">
             <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-amber-800"></span>
-            Additional Documents
+            Application Status
           </h3>
           <div className="space-y-2 relative z-10">
-            <div
-              className="flex justify-between items-center py-2 border-b border-dashed border-amber-700/50 cursor-pointer hover:bg-amber-100/50 rounded px-2 transition-colors"
-              onClick={() => user?.passport && setSelectedImage(user.passport)}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-serif text-amber-900 font-medium">Passport:</span>
-                {user?.passport && (
-                  <span className="text-xs font-serif text-amber-800 font-bold">✓ UPLOADED</span>
-                )}
-              </div>
-              {user?.passport && (
-                <span className="text-xs font-serif text-amber-900 font-medium">TAP TO VIEW</span>
-              )}
+            <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
+              <span className="text-sm font-serif text-amber-900 font-medium">Application Submitted:</span>
+              <span className="text-sm font-serif font-bold text-amber-900">{user?.applicationStatus?.submitted ? '✓ Yes' : 'No'}</span>
             </div>
-            <div
-              className="flex justify-between items-center py-2 border-b border-dashed border-amber-700/50 cursor-pointer hover:bg-amber-100/50 rounded px-2 transition-colors"
-              onClick={() => user?.yellowFever && setSelectedImage(user.yellowFever)}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-serif text-amber-900 font-medium">Yellow Fever Card:</span>
-                {user?.yellowFever && (
-                  <span className="text-xs font-serif text-amber-800 font-bold">✓ UPLOADED</span>
-                )}
-              </div>
-              {user?.yellowFever && (
-                <span className="text-xs font-serif text-amber-900 font-medium">TAP TO VIEW</span>
-              )}
+            <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
+              <span className="text-sm font-serif text-amber-900 font-medium">Appointment Booked:</span>
+              <span className="text-sm font-serif font-bold text-amber-900">{user?.applicationStatus?.appointmentBooked ? '✓ Yes' : 'No'}</span>
             </div>
-            <div
-              className="flex justify-between items-center py-2 border-b border-dashed border-amber-700/50 cursor-pointer hover:bg-amber-100/50 rounded px-2 transition-colors"
-              onClick={() => user?.drivingLicense && setSelectedImage(user.drivingLicense)}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-serif text-amber-900 font-medium">Driving License:</span>
-                {user?.drivingLicense && (
-                  <span className="text-xs font-serif text-amber-800 font-bold">✓ UPLOADED</span>
-                )}
+            {user?.applicationStatus?.appointmentDate && (
+              <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
+                <span className="text-sm font-serif text-amber-900 font-medium">Appointment Date:</span>
+                <span className="text-sm font-serif font-bold text-amber-900">{new Date(user.applicationStatus.appointmentDate).toLocaleDateString()}</span>
               </div>
-              {user?.drivingLicense && (
-                <span className="text-xs font-serif text-amber-900 font-medium">TAP TO VIEW</span>
-              )}
+            )}
+            {user?.applicationStatus?.appointmentTime && (
+              <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
+                <span className="text-sm font-serif text-amber-900 font-medium">Appointment Time:</span>
+                <span className="text-sm font-serif font-bold text-amber-900">{user.applicationStatus.appointmentTime}</span>
+              </div>
+            )}
+            <div className="flex justify-between py-2">
+              <span className="text-sm font-serif text-amber-900 font-medium">Payment Status:</span>
+              <span className="text-sm font-serif font-bold text-amber-900">{user?.applicationStatus?.paymentStatus || 'Pending'}</span>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Image Modal */}
-      {selectedImage && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
-          <div className="relative max-w-full max-h-full">
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300"
-            >
-              <X size={24} />
-            </button>
-            <img 
-              src={selectedImage} 
-              alt="Document" 
-              className="max-w-full max-h-[80vh] object-contain"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
-      )}
       
       <BottomNav />
     </div>

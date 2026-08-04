@@ -110,7 +110,7 @@ export default function ProfilePage() {
       // Only redirect if this was first-time completion
       if (wasInitiallyEmpty) {
         setTimeout(() => {
-          window.location.href = '/documents';
+          window.location.href = '/dashboard';
         }, 1000);
       }
     } catch (err) {

@@ -34,18 +34,10 @@ export async function POST(request: Request) {
           fullName: user.fullName,
           location: user.location,
           email: user.email,
-          nationalIdFront: user.nationalIdFront,
-          nationalIdBack: user.nationalIdBack,
-          passport: user.passport,
-          yellowFever: user.yellowFever,
-          drivingLicense: user.drivingLicense,
           jobPreferences: user.jobPreferences,
           applicationDocuments: user.applicationDocuments,
           applicationStatus: user.applicationStatus,
-          additionalDocumentsSkipped: user.additionalDocumentsSkipped,
-          additionalDocumentsComplete: user.additionalDocumentsComplete,
-          profileComplete: user.profileComplete,
-          documentsComplete: user.documentsComplete,
+          profileComplete: user.profileComplete
         } 
       },
       { status: 200 }
