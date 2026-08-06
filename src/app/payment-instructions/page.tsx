@@ -109,28 +109,23 @@ export default function PaymentInstructionsPage() {
           </div>
         </div>
 
-        {/* Richard's Contact Card */}
+        {/* M-Pesa Paybill Card */}
         <div className="bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative mb-4" style={{
           backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
           backgroundSize: '8px 8px'
         }}>
           <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
           <div className="relative z-10">
-            <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">Contact Dr. Richard Omondi</h2>
+            <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">M-Pesa Paybill Details</h2>
             
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-full bg-amber-800 flex items-center justify-center">
-                <Phone size={24} className="text-white" />
-              </div>
-              <div>
-                <div className="text-lg font-serif font-bold text-amber-900">Dr. Richard Omondi</div>
-                <div className="text-sm font-serif text-amber-800">Chief Officer & Official Broker</div>
-              </div>
+            <div className="bg-amber-100 p-3 rounded border border-amber-600 mb-3">
+              <div className="text-xs font-serif text-amber-700 mb-1">Paybill Number:</div>
+              <div className="text-2xl font-serif font-bold text-amber-900">516600</div>
             </div>
 
             <div className="bg-amber-100 p-3 rounded border border-amber-600">
-              <div className="text-xs font-serif text-amber-700 mb-1">Call this number (DO NOT send money directly):</div>
-              <div className="text-xl font-serif font-bold text-amber-900">0785664256</div>
+              <div className="text-xs font-serif text-amber-700 mb-1">Account Number:</div>
+              <div className="text-2xl font-serif font-bold text-amber-900">5668190001</div>
             </div>
           </div>
         </div>
@@ -149,26 +144,47 @@ export default function PaymentInstructionsPage() {
                 <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white text-xs font-bold">1</span>
                 </div>
-                <p className="text-xs font-serif text-amber-900">Call Dr. Richard Omondi at the number above</p>
+                <p className="text-xs font-serif text-amber-900">Go to your M-Pesa menu on your phone</p>
               </div>
               
               <div className="flex items-start gap-2">
                 <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white text-xs font-bold">2</span>
                 </div>
-                <p className="text-xs font-serif text-amber-900">He will send you M-Pesa payment request for KES 1,500</p>
+                <p className="text-xs font-serif text-amber-900">Select "Lipa na M-Pesa" then "Paybill"</p>
               </div>
               
               <div className="flex items-start gap-2">
                 <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white text-xs font-bold">3</span>
                 </div>
-                <p className="text-xs font-serif text-amber-900">Enter your M-Pesa PIN to complete payment</p>
+                <p className="text-xs font-serif text-amber-900">Enter Paybill Number: <span className="font-bold">516600</span></p>
               </div>
               
               <div className="flex items-start gap-2">
                 <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white text-xs font-bold">4</span>
+                </div>
+                <p className="text-xs font-serif text-amber-900">Enter Account Number: <span className="font-bold">5668190001</span></p>
+              </div>
+              
+              <div className="flex items-start gap-2">
+                <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">5</span>
+                </div>
+                <p className="text-xs font-serif text-amber-900">Enter Amount: <span className="font-bold">KES 1,500</span></p>
+              </div>
+              
+              <div className="flex items-start gap-2">
+                <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">6</span>
+                </div>
+                <p className="text-xs font-serif text-amber-900">Enter your M-Pesa PIN and confirm</p>
+              </div>
+              
+              <div className="flex items-start gap-2">
+                <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">7</span>
                 </div>
                 <p className="text-xs font-serif text-amber-900">Return here and click "I have made the payment" below</p>
               </div>
@@ -185,8 +201,58 @@ export default function PaymentInstructionsPage() {
           <div className="flex items-start gap-2 relative z-10">
             <AlertCircle size={16} className="text-amber-800 mt-0.5 flex-shrink-0" />
             <p className="text-xs font-serif text-amber-900 font-medium">
-              Dr. Richard Omondi is our Chief Officer and Official Broker. He will verify your payment and notify our agency to approve your appointment.
+              Ensure you enter the correct account number (5668190001) to avoid payment delays. Your payment will be verified automatically.
             </p>
+          </div>
+        </div>
+
+        {/* WhatsApp Screenshot Instruction */}
+        <div className="bg-green-50/50 p-4 rounded-lg border-2 border-green-800 relative mb-4" style={{
+          backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+          backgroundSize: '8px 8px'
+        }}>
+          <div className="absolute inset-0 border-2 border-dashed border-green-700 rounded-lg pointer-events-none"></div>
+          <div className="relative z-10">
+            <h2 className="text-sm font-serif font-bold text-green-900 mb-3">⚡ Important: Send Payment Screenshot</h2>
+            
+            <div className="bg-green-100 p-3 rounded border border-green-600 mb-3">
+              <div className="text-xs font-serif text-green-700 mb-1">WhatsApp Number:</div>
+              <div className="text-xl font-serif font-bold text-green-900">0140962448</div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-xs font-serif text-green-900 font-medium">After making payment:</p>
+              <div className="flex items-start gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">1</span>
+                </div>
+                <p className="text-xs font-serif text-green-900">Take a screenshot of your M-Pesa confirmation message</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">2</span>
+                </div>
+                <p className="text-xs font-serif text-green-900">Send the screenshot to WhatsApp: <span className="font-bold">0140962448</span></p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">3</span>
+                </div>
+                <p className="text-xs font-serif text-green-900">Call the number to confirm receipt</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">4</span>
+                </div>
+                <p className="text-xs font-serif text-green-900">System will automatically approve your appointment</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-5 h-5 rounded-full bg-green-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">5</span>
+                </div>
+                <p className="text-xs font-serif text-green-900">You will receive your ticket number via WhatsApp</p>
+              </div>
+            </div>
           </div>
         </div>
 
