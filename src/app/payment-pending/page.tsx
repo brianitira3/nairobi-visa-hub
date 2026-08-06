@@ -146,24 +146,6 @@ export default function PaymentPendingPage() {
           </div>
         </div>
 
-        {/* WhatsApp Contact */}
-        <div className="bg-green-50/50 p-4 rounded-lg border-2 border-green-800 relative mb-4" style={{
-          backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
-          backgroundSize: '8px 8px'
-        }}>
-          <div className="absolute inset-0 border-2 border-dashed border-green-700 rounded-lg pointer-events-none"></div>
-          <div className="relative z-10">
-            <h2 className="text-sm font-serif font-bold text-green-900 mb-3">WhatsApp Support</h2>
-            
-            <div className="bg-green-100 p-3 rounded border border-green-600 mb-3">
-              <div className="text-xs font-serif text-green-700 mb-1">WhatsApp Number:</div>
-              <div className="text-xl font-serif font-bold text-green-900">0140962448</div>
-            </div>
-
-            <p className="text-xs font-serif text-green-900">Send your payment screenshot to this number. Call to confirm receipt and receive your ticket number.</p>
-          </div>
-        </div>
-
         {/* Info Note */}
         <div className="bg-green-100/50 p-3 rounded-lg border-2 border-green-800 relative mb-4" style={{
           backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
