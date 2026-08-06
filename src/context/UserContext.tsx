@@ -62,6 +62,7 @@ interface User {
     paymentReference?: string;
     paymentAmount?: number;
   };
+  ticketNumber?: string;
 }
 
 interface UserContextType {

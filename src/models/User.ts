@@ -116,6 +116,10 @@ const UserSchema = new mongoose.Schema({
     paymentReference: String,
     paymentAmount: { type: Number, default: 1500 },
   },
+  ticketNumber: {
+    type: String,
+    default: null,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

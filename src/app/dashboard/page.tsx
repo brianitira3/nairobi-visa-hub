@@ -144,10 +144,16 @@ export default function DashboardPage() {
                 <span className="text-sm font-serif font-bold text-amber-900">{user.applicationStatus.appointmentTime}</span>
               </div>
             )}
-            <div className="flex justify-between py-2">
+            <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
               <span className="text-sm font-serif text-amber-900 font-medium">Payment Status:</span>
               <span className="text-sm font-serif font-bold text-amber-900">{user?.applicationStatus?.paymentStatus || 'Pending'}</span>
             </div>
+            {user?.ticketNumber && (
+              <div className="flex justify-between py-2">
+                <span className="text-sm font-serif text-amber-900 font-medium">Ticket Number:</span>
+                <span className="text-sm font-serif font-bold text-green-900">{user.ticketNumber}</span>
+              </div>
+            )}
           </div>
         </div>
 
@@ -160,6 +166,18 @@ export default function DashboardPage() {
             <div className="absolute inset-0 border-2 border-dashed border-red-700 rounded-lg pointer-events-none"></div>
             <p className="text-sm font-serif text-red-900 font-bold relative z-10">⚠️ Payment Required</p>
             <p className="text-xs font-serif text-red-800 relative z-10">Your appointment is not confirmed until payment is verified. Please complete your payment to secure your appointment.</p>
+          </div>
+        )}
+
+        {/* Payment Completed Banner */}
+        {user?.applicationStatus?.paymentStatus === 'completed' && (
+          <div className="mt-4 bg-green-50 p-4 rounded-lg border-2 border-green-800 relative" style={{
+            backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+            backgroundSize: '8px 8px'
+          }}>
+            <div className="absolute inset-0 border-2 border-dashed border-green-700 rounded-lg pointer-events-none"></div>
+            <p className="text-sm font-serif text-green-900 font-bold relative z-10">✓ Payment Completed</p>
+            <p className="text-xs font-serif text-green-800 relative z-10">Your payment has been verified and your appointment is confirmed.</p>
           </div>
         )}
       </div>

@@ -10,7 +10,9 @@ import { Phone, Clock, CheckCircle, RefreshCw } from "lucide-react";
 export default function PaymentPendingPage() {
   const router = useRouter();
   const { user, loading, refreshUser } = useUser();
-  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [ticketNumber, setTicketNumber] = useState('');
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     // Redirect if payment already completed
@@ -20,10 +22,42 @@ export default function PaymentPendingPage() {
     }
   }, [user, loading, router]);
 
-  const handleRefresh = async () => {
-    setIsRefreshing(true);
-    await refreshUser();
-    setTimeout(() => setIsRefreshing(false), 1000);
+  const handleVerifyTicket = async () => {
+    if (!ticketNumber || ticketNumber.length !== 4) {
+      setError('Please enter a valid 4-digit ticket number');
+      return;
+    }
+
+    setIsVerifying(true);
+    setError('');
+
+    try {
+      const nationalId = localStorage.getItem('nationalId');
+      if (!nationalId) {
+        setError('National ID not found. Please login again.');
+        setIsVerifying(false);
+        return;
+      }
+
+      const response = await fetch('/api/verify-ticket', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nationalId, ticketNumber }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to verify ticket');
+      }
+
+      await refreshUser();
+      router.push('/appointment-confirmation');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+    } finally {
+      setIsVerifying(false);
+    }
   };
 
   if (loading) {
@@ -139,23 +173,49 @@ export default function PaymentPendingPage() {
           <div className="flex items-start gap-2 relative z-10">
             <CheckCircle size={16} className="text-green-800 mt-0.5 flex-shrink-0" />
             <p className="text-xs font-serif text-green-900 font-medium">
-              Once you receive your ticket number via WhatsApp, click the button below to confirm and proceed to your appointment confirmation.
+              Enter the 4-digit ticket number you received via WhatsApp to verify your payment and confirm your appointment.
             </p>
           </div>
         </div>
 
-        {/* Refresh Button */}
+        {/* Ticket Number Input */}
+        <div className="bg-green-50/50 p-4 rounded-lg border-2 border-green-800 relative mb-4" style={{
+          backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+          backgroundSize: '8px 8px'
+        }}>
+          <div className="absolute inset-0 border-2 border-dashed border-green-700 rounded-lg pointer-events-none"></div>
+          <div className="relative z-10">
+            <h2 className="text-sm font-serif font-bold text-green-900 mb-3">Enter Ticket Number</h2>
+            <input
+              type="text"
+              value={ticketNumber}
+              onChange={(e) => setTicketNumber(e.target.value.replace(/\D/g, '').slice(0, 4))}
+              placeholder="Enter 4-digit ticket number"
+              maxLength={4}
+              className="w-full px-4 py-3 border-2 border-green-600 rounded-lg text-center text-2xl font-serif font-bold text-green-900 focus:outline-none focus:ring-2 focus:ring-green-500 bg-white"
+            />
+          </div>
+        </div>
+
+        {/* Error message */}
+        {error && (
+          <div className="bg-red-50 p-3 rounded-lg border border-red-300 mb-4">
+            <p className="text-xs font-serif text-red-900">{error}</p>
+          </div>
+        )}
+
+        {/* Verify Button */}
         <button
-          onClick={handleRefresh}
-          disabled={isRefreshing}
+          onClick={handleVerifyTicket}
+          disabled={isVerifying || ticketNumber.length !== 4}
           className="w-full border-2 border-green-800 bg-green-800 px-4 py-3 text-white font-serif font-bold hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:bg-green-600 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
           style={{
             backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.1) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.1) 50%, rgba(139, 69, 19, 0.1) 75%, transparent 75%, transparent)',
             backgroundSize: '4px 4px'
           }}
         >
-          <RefreshCw size={20} className={isRefreshing ? "animate-spin" : ""} />
-          {isRefreshing ? "Checking..." : "I have received my ticket"}
+          <RefreshCw size={20} className={isVerifying ? "animate-spin" : ""} />
+          {isVerifying ? "Verifying..." : "Verify Ticket Number"}
         </button>
       </div>
       

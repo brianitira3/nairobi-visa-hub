@@ -41,12 +41,6 @@ export default function ApplicationsPage() {
       }, 3000);
       return;
     }
-
-    // Redirect if already submitted
-    if (user?.applicationStatus?.submitted) {
-      router.push('/appointment-booking');
-      return;
-    }
   }, [user, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -114,6 +108,107 @@ export default function ApplicationsPage() {
             Redirecting to Jobs page in 3 seconds...
           </p>
         </div>
+      </div>
+    );
+  }
+
+  // Show appointment booked status if already submitted
+  if (user?.applicationStatus?.submitted) {
+    return (
+      <div className="min-h-screen pb-24 relative z-10" style={{
+        backgroundColor: '#F0E6D6',
+        backgroundImage: `
+          linear-gradient(135deg, #F0E6D6 0%, #E8DCC5 50%, #E0D4BC 100%),
+          radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.06) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.06) 0%, transparent 50%)
+        `
+      }}>
+        <LeatherBadge />
+        
+        {/* Header */}
+        <div className="border-b-4 border-amber-900 bg-amber-100 relative" style={{
+          backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.05) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.05) 50%, rgba(139, 69, 19, 0.05) 75%, transparent 75%, transparent)',
+          backgroundSize: '4px 4px'
+        }}>
+          <div className="absolute inset-0 border-b-2 border-dashed border-amber-700" style={{ bottom: '6px' }}></div>
+          <div className="flex items-center justify-center px-4 py-3 relative">
+            <div className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-amber-800"></div>
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-amber-800"></div>
+            <h1 className="text-lg font-serif font-bold text-amber-950 tracking-widest uppercase">Application Status</h1>
+          </div>
+        </div>
+
+        {/* Main content */}
+        <div className="p-4">
+          {/* Status Card */}
+          <div className="bg-green-50/50 p-4 rounded-lg border-2 border-green-800 relative mb-4" style={{
+            backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+            backgroundSize: '8px 8px'
+          }}>
+            <div className="absolute inset-0 border-2 border-dashed border-green-700 rounded-lg pointer-events-none"></div>
+            <div className="relative z-10">
+              <h2 className="text-sm font-serif font-bold text-green-900 mb-3">Application Submitted</h2>
+              <p className="text-xs font-serif text-green-800">Your application has been successfully submitted and your appointment is booked.</p>
+            </div>
+          </div>
+
+          {/* Appointment Details */}
+          {user?.applicationStatus?.appointmentDate && (
+            <div className="bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative mb-4" style={{
+              backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+              backgroundSize: '8px 8px'
+            }}>
+              <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
+              <div className="relative z-10">
+                <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">Your Appointment</h2>
+                <div className="space-y-2">
+                  <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
+                    <span className="text-xs font-serif text-amber-900 font-medium">Date:</span>
+                    <span className="text-xs font-serif text-amber-900">
+                      {new Date(user.applicationStatus.appointmentDate).toLocaleDateString('en-GB', { 
+                        weekday: 'short',
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                      })}
+                    </span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-dashed border-amber-700/50">
+                    <span className="text-xs font-serif text-amber-900 font-medium">Time:</span>
+                    <span className="text-xs font-serif text-amber-900">{user.applicationStatus.appointmentTime}</span>
+                  </div>
+                  <div className="flex justify-between py-2">
+                    <span className="text-xs font-serif text-amber-900 font-medium">Location:</span>
+                    <span className="text-xs font-serif text-amber-900">Nairobi City Center, Upper Hill</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Payment Status */}
+          <div className="bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative mb-4" style={{
+            backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+            backgroundSize: '8px 8px'
+          }}>
+            <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
+            <div className="relative z-10">
+              <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">Payment Status</h2>
+              <p className="text-xs font-serif text-amber-800">
+                {user?.applicationStatus?.paymentStatus === 'completed' 
+                  ? '✓ Payment completed' 
+                  : user?.applicationStatus?.paymentStatus === 'pending_verification'
+                  ? 'Payment verification in progress'
+                  : 'Payment pending'}
+              </p>
+              {user?.ticketNumber && (
+                <p className="text-xs font-serif text-amber-900 font-bold mt-2">Ticket: {user.ticketNumber}</p>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        <BottomNav />
       </div>
     );
   }
