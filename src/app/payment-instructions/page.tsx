@@ -186,13 +186,6 @@ export default function PaymentInstructionsPage() {
                 </div>
                 <p className="text-xs font-serif text-amber-900">Enter your M-Pesa PIN and confirm</p>
               </div>
-              
-              <div className="flex items-start gap-2">
-                <div className="w-6 h-6 rounded-full bg-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-white text-xs font-bold">7</span>
-                </div>
-                <p className="text-xs font-serif text-amber-900">Return here and click "I have made the payment" below</p>
-              </div>
             </div>
           </div>
         </div>
@@ -278,7 +271,7 @@ export default function PaymentInstructionsPage() {
             backgroundSize: '4px 4px'
           }}
         >
-          {isSubmitting ? "Processing..." : "I have made the payment"}
+          {isSubmitting ? "Processing..." : "Continue to Payment Verification"}
         </button>
       </div>
       
