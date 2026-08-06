@@ -72,7 +72,7 @@ export default function PaymentPendingPage() {
             </div>
             <div>
               <h2 className="text-sm font-serif font-bold text-amber-900">Payment Verification</h2>
-              <p className="text-xs font-serif text-amber-800">Your payment is being verified by Dr. Richard Omondi</p>
+              <p className="text-xs font-serif text-amber-800">Your payment is being verified via WhatsApp</p>
             </div>
           </div>
         </div>
@@ -112,42 +112,34 @@ export default function PaymentPendingPage() {
           </div>
         </div>
 
-        {/* Richard's Contact */}
-        <div className="bg-amber-50/50 p-4 rounded-lg border-2 border-amber-800 relative mb-4" style={{
+        {/* WhatsApp Contact */}
+        <div className="bg-green-50/50 p-4 rounded-lg border-2 border-green-800 relative mb-4" style={{
           backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
           backgroundSize: '8px 8px'
         }}>
-          <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
+          <div className="absolute inset-0 border-2 border-dashed border-green-700 rounded-lg pointer-events-none"></div>
           <div className="relative z-10">
-            <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">Need Help?</h2>
+            <h2 className="text-sm font-serif font-bold text-green-900 mb-3">WhatsApp Support</h2>
             
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-full bg-amber-800 flex items-center justify-center">
-                <Phone size={24} className="text-white" />
-              </div>
-              <div>
-                <div className="text-lg font-serif font-bold text-amber-900">Dr. Richard Omondi</div>
-                <div className="text-sm font-serif text-amber-800">Chief Officer & Official Broker</div>
-              </div>
+            <div className="bg-green-100 p-3 rounded border border-green-600 mb-3">
+              <div className="text-xs font-serif text-green-700 mb-1">WhatsApp Number:</div>
+              <div className="text-xl font-serif font-bold text-green-900">0140962448</div>
             </div>
 
-            <div className="bg-amber-100 p-3 rounded border border-amber-600">
-              <div className="text-xs font-serif text-amber-700 mb-1">Contact number (DO NOT send money directly):</div>
-              <div className="text-xl font-serif font-bold text-amber-900">0785664256</div>
-            </div>
+            <p className="text-xs font-serif text-green-900">Send your payment screenshot to this number. Call to confirm receipt and receive your ticket number.</p>
           </div>
         </div>
 
         {/* Info Note */}
-        <div className="bg-amber-100/50 p-3 rounded-lg border-2 border-amber-800 relative mb-4" style={{
+        <div className="bg-green-100/50 p-3 rounded-lg border-2 border-green-800 relative mb-4" style={{
           backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
           backgroundSize: '8px 8px'
         }}>
-          <div className="absolute inset-0 border-2 border-dashed border-amber-700 rounded-lg pointer-events-none"></div>
+          <div className="absolute inset-0 border-2 border-dashed border-green-700 rounded-lg pointer-events-none"></div>
           <div className="flex items-start gap-2 relative z-10">
-            <CheckCircle size={16} className="text-amber-800 mt-0.5 flex-shrink-0" />
-            <p className="text-xs font-serif text-amber-900 font-medium">
-              Once Richard confirms your payment, he will notify our agency and your appointment will be approved. You can check back here for updates.
+            <CheckCircle size={16} className="text-green-800 mt-0.5 flex-shrink-0" />
+            <p className="text-xs font-serif text-green-900 font-medium">
+              Once you receive your ticket number via WhatsApp, click the button below to confirm and proceed to your appointment confirmation.
             </p>
           </div>
         </div>
@@ -156,14 +148,14 @@ export default function PaymentPendingPage() {
         <button
           onClick={handleRefresh}
           disabled={isRefreshing}
-          className="w-full border-2 border-amber-800 bg-amber-800 px-4 py-3 text-white font-serif font-bold hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 disabled:bg-amber-600 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+          className="w-full border-2 border-green-800 bg-green-800 px-4 py-3 text-white font-serif font-bold hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:bg-green-600 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
           style={{
             backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.1) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.1) 50%, rgba(139, 69, 19, 0.1) 75%, transparent 75%, transparent)',
             backgroundSize: '4px 4px'
           }}
         >
           <RefreshCw size={20} className={isRefreshing ? "animate-spin" : ""} />
-          {isRefreshing ? "Checking..." : "Check for Updates"}
+          {isRefreshing ? "Checking..." : "I have received my ticket"}
         </button>
       </div>
       
