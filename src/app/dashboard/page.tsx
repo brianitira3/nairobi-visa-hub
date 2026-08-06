@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import BottomNav from "@/components/BottomNav";
 import { useUser } from "@/context/UserContext";
 import LeatherBadge from "@/components/LeatherBadge";
 
 export default function DashboardPage() {
   const { user, loading } = useUser();
+  const router = useRouter();
   const [isMobile, setIsMobile] = useState<boolean>(true);
 
   useEffect(() => {
@@ -159,14 +161,28 @@ export default function DashboardPage() {
 
         {/* Payment Warning Banner */}
         {user?.applicationStatus?.appointmentBooked && user?.applicationStatus?.paymentStatus !== 'completed' && (
-          <div className="mt-4 bg-red-50 p-4 rounded-lg border-2 border-red-800 relative" style={{
-            backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
-            backgroundSize: '8px 8px'
-          }}>
-            <div className="absolute inset-0 border-2 border-dashed border-red-700 rounded-lg pointer-events-none"></div>
-            <p className="text-sm font-serif text-red-900 font-bold relative z-10">⚠️ Payment Required</p>
-            <p className="text-xs font-serif text-red-800 relative z-10">Your appointment is not confirmed until payment is verified. Please complete your payment to secure your appointment.</p>
-          </div>
+          <>
+            <div className="mt-4 bg-red-50 p-4 rounded-lg border-2 border-red-800 relative" style={{
+              backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.03) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.03) 50%, rgba(139, 69, 19, 0.03) 75%, transparent 75%, transparent)',
+              backgroundSize: '8px 8px'
+            }}>
+              <div className="absolute inset-0 border-2 border-dashed border-red-700 rounded-lg pointer-events-none"></div>
+              <p className="text-sm font-serif text-red-900 font-bold relative z-10">⚠️ Payment Required</p>
+              <p className="text-xs font-serif text-red-800 relative z-10">Your appointment is not confirmed until payment is verified. Please complete your payment to secure your appointment.</p>
+            </div>
+
+            {/* Complete Payment Button */}
+            <button
+              onClick={() => router.push('/payment-pending')}
+              className="mt-4 w-full border-2 border-amber-800 bg-amber-800 px-4 py-3 text-white font-serif font-bold hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transition-colors"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, rgba(139, 69, 19, 0.1) 25%, transparent 25%, transparent 50%, rgba(139, 69, 19, 0.1) 50%, rgba(139, 69, 19, 0.1) 75%, transparent 75%, transparent)',
+                backgroundSize: '4px 4px'
+              }}
+            >
+              Complete Payment
+            </button>
+          </>
         )}
 
         {/* Payment Completed Banner */}
