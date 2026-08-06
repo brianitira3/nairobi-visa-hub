@@ -37,7 +37,8 @@ export async function POST(request: Request) {
           jobPreferences: user.jobPreferences,
           applicationDocuments: user.applicationDocuments,
           applicationStatus: user.applicationStatus,
-          profileComplete: user.profileComplete
+          profileComplete: user.profileComplete,
+          ticketNumber: user.ticketNumber
         } 
       },
       { status: 200 }
