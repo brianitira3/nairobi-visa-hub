@@ -112,8 +112,8 @@ export default function ApplicationsPage() {
     );
   }
 
-  // Show appointment booked status if already submitted
-  if (user?.applicationStatus?.submitted) {
+  // Show appointment booked status if already submitted AND payment completed
+  if (user?.applicationStatus?.submitted && user?.applicationStatus?.paymentStatus === 'completed') {
     return (
       <div className="min-h-screen pb-24 relative z-10" style={{
         backgroundColor: '#F0E6D6',
