@@ -119,6 +119,11 @@ export default function PaymentInstructionsPage() {
             <h2 className="text-sm font-serif font-bold text-amber-900 mb-3">M-Pesa Paybill Details</h2>
             
             <div className="bg-amber-100 p-3 rounded border border-amber-600 mb-3">
+              <div className="text-xs font-serif text-amber-700 mb-1">Bank:</div>
+              <div className="text-xl font-serif font-bold text-amber-900">DTB (Diamond Trust Bank)</div>
+            </div>
+
+            <div className="bg-amber-100 p-3 rounded border border-amber-600 mb-3">
               <div className="text-xs font-serif text-amber-700 mb-1">Paybill Number:</div>
               <div className="text-2xl font-serif font-bold text-amber-900">516600</div>
             </div>
